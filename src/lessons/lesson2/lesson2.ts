@@ -1,5 +1,3 @@
-
-
 console.log('lesson 2')
 
 // Lexical environment
@@ -192,6 +190,7 @@ function printList2(list: any): any {
 		list = list.next
 	}
 }
+
 printList(list)
 printList2(list)
 
@@ -202,6 +201,7 @@ function reversePrintList(list: any): any {
 	}
 	alert(list.value)
 }
+
 reversePrintList(list)
 
 function reversePrintList2(list: any): any {
@@ -211,7 +211,7 @@ function reversePrintList2(list: any): any {
 		arr.push(list.value)
 		list = list.next
 	}
-	for (let i = arr.length-1; i >= 0; i--) {
+	for (let i = arr.length - 1; i >= 0; i--) {
 		alert(arr[i])
 	}
 }
@@ -220,6 +220,23 @@ reversePrintList2(list)
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
+// @ts-ignore
+
+Array.prototype.myFlat = function (depth:any = 1/0) {
+	let flattenedArr: any = []
+
+	for (let i = 0; i < this.length; i++) {
+		if (Array.isArray(this[i]) && depth > 0) {
+			flattenedArr = flattenedArr.concat(this[i].myFlat(depth - 1))
+		} else {
+			flattenedArr.push(this[i])
+		}
+	}
+
+	return flattenedArr
+}
+
+console.log([1, 2, [3], [[[4], 5]]].myFlat(1))
 // just a plug
 export default () => {
 };

@@ -236,7 +236,7 @@ Array.prototype.myFlat = function (depth:any = 1/0) {
 	return flattenedArr
 }
 
-console.log([1, 2, [3], [[[4], 5]]].myFlat(1))
+// console.log([1, 2, [3], [[[4], 5]]].myFlat(1))
 // just a plug
 export default () => {
 };

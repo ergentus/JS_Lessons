@@ -139,6 +139,7 @@ helperObj.setAge(5)
 function sumTwoNumbers(a: number, b: number): number {
 	return a + b
 }
+
 //@ts-ignore
 function bindNumber(sumTwoNumbers, num) {
 	return function (n: any) {
